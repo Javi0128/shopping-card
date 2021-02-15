@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form novalidate class="m-5" (ngSubmit)="onSubmit()" [formGroup]="formulario">
+    <div class="mb-3">
+      <ion-item>
+        <ion-label>Name:</ion-label>
+        <ion-input
+          type="text"
+          formControlName="name"
+          class="valid"
+          ></ion-input>
+        </ion-item>
+
+          <div *ngIf="!formulario.get('name').valid && formulario.get('name').touched">
+            <p class="alert alert-danger" *ngIf="formulario.get('name').errors['required']">
+              Name is required
+            </p>
+          </div>
+
+
+    </div>
+
+
+    <!-- <div *ngIf="name.value == ''">
+        <p class="alert alert-warning">Name is required<p>
+    </div> -->
+
+    <div class="mb-3">
+      <ion-item>
+        <ion-label>Surname:</ion-label>
+        <ion-input type="text" formControlName="surname"></ion-input>
+      </ion-item>
+
+        <div *ngIf="!formulario.get('surname').valid && formulario.get('surname').touched">
+          <p class="alert alert-danger" *ngIf="formulario.get('surname').errors['required']">
+            Surname is required
+          </p>
+        </div>
+
+    </div>
+
+    <div class="mb-3">
+      <ion-item>
+        <ion-label>Address:</ion-label>
+        <ion-input type="text" formControlName="address"></ion-input>
+      </ion-item>
+
+        <div *ngIf="!formulario.get('address').valid && formulario.get('address').touched">
+          <p class="alert alert-danger" *ngIf="formulario.get('address').errors['required']">
+            Address is required
+          </p>
+        </div>
+
+    </div>
+
+    <div class="mb-3">
+      <ion-item>
+        <ion-label>Email:</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+
+        <div *ngIf="!formulario.get('email').valid && formulario.get('email').touched">
+          <p class="alert alert-warning" *ngIf="formulario.get('email').errors['email']">
+            Email pattern is not correct
+          </p>
+
+          <p class="alert alert-danger" *ngIf="formulario.get('email').errors['required']">
+            Email is required
+          </p>
+        </div>
+
+    </div>
+
+    <div class="mb-3">
+      <ion-item>
+        <ion-label>Password:</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+
+        <div *ngIf="!formulario.get('password').valid && formulario.get('password').touched">
+
+          <p class="alert alert-danger" *ngIf="formulario.get('password').errors['required']">
+            Password is required
+          </p>
+
+        </div>
+
+    </div>
+
+    <input
+      type="submit"
+      class="btn btn-primary"
+      value="Realizar Pedido"
+      (click)="onSubmit()"
+    />
+  </form>
+</ion-content>

@@ -21,8 +21,11 @@
     "@angular/router": "~11.0.5",
     "@capacitor/core": "2.4.6",
     "@ionic/angular": "^5.5.2",
+    "animate.css": "^4.1.1",
     "rxjs": "~6.6.0",
+    "sweetalert": "^2.1.2",
     "tslib": "^2.0.0",
+    "uuid": "^8.3.2",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
